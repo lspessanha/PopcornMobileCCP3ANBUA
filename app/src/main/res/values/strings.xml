@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">PopcornMobileCCP3ANBUA</string>
     <string name="action_settings">Opções</string>
-    <string-array name="genero">
+    <string-array name="generos">
         <item>Todos</item>
+        <item>Ação</item>
         <item>Animação</item>
         <item>Aventura</item>
         <item>Comédia</item>
@@ -20,6 +21,6 @@
         <item>Musical</item>
         <item>Romance</item>
         <item>Suspense</item>
-        <item>Wester</item>
+        <item>Western</item>
     </string-array>
 </resources>

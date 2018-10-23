@@ -6,23 +6,27 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class DadosFilmeActivity extends AppCompatActivity {
-    TextView id, titulo, descricao, diretor, dataLancamento, popularidade, genero;
+    private TextView titulo;
+    private TextView direcaoDetailTextView;
+    private TextView popularidade;
+    private TextView dataLancamento;
+    private TextView descricao;
 
-    private TextView tituloFilmeTextView;
-    private TextView descricaoFilmeTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dados_filme);
-        tituloFilmeTextView =
-                findViewById(R.id.tituloDoItemTextView);
-        descricaoFilmeTextView =
-                findViewById(R.id.descricaoDoItemTextView);
+        titulo = (TextView) findViewById(R.id.titulo);
+        direcaoDetailTextView =(TextView) findViewById(R.id.direcaoDetailTextView);
+        popularidade = (TextView) findViewById(R.id.popularidadeText);
+        dataLancamento = (TextView) findViewById(R.id.dataLancamento);
+        descricao = (TextView) findViewById(R.id.descricao);
         Intent intent = getIntent();
-        Filmes oCaraQueFoiTocado = (Filmes)
-                intent.getSerializableExtra("oCaraQueFoiTocado");
-        tituloFilmeTextView.setText(oCaraQueFoiTocado.getTitulo().trim());
-        descricaoFilmeTextView.setText(oCaraQueFoiTocado.getDescricao().trim());
+        Filmes filme = (Filmes)intent.getSerializableExtra(ListaFilmesActivity.FILME);
+        titulo.setText("ID " + filme.getId() + " - " + filme.getTitulo());
+        direcaoDetailTextView.setText((filme.getDiretor()));
+        popularidade.setText(Double.toString(filme.getPopularidade()));
+        dataLancamento.setText(filme.getDataLancamento());
+        descricao.setText(filme.getDescricao());
     }
-
 }

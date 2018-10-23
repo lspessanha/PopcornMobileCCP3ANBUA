@@ -1,63 +1,55 @@
 package br.com.siqueira.popcornmobileccp3anbua;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class FilmesAdapter extends ArrayAdapter <Filmes> {
+public class FilmesAdapter  extends ArrayAdapter<Filmes>{
 
-    private List <Filmes> filmes;
-    private Context context;
-    public FilmesAdapter (List <Filmes> filmes, Context context){
-        super(context, -1, filmes);
-        this.filmes = filmes;
-        this.context = context;
+    public FilmesAdapter(Context context, List<Filmes> cast ){
+        super(context,-1,cast);
     }
 
-    @Override
-    public int getCount() {
-        return filmes.size();
+    private  static class ViewHolder{
+        ImageView filmeImage;
+        TextView titulo;
+        TextView diretor;
+        TextView dataLancamento;
     }
 
+    @NonNull
     @Override
-    public Filmes getItem(int position) {
-        return filmes.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        Filmes deInteresse = filmes.get(position);
-        TextView tituloDoItemTextView;
-        TextView descricaoDoItemTextView;
-        ViewHolder vh;
-        if(convertView == null) {
+    public View getView(int position, @Nullable View convertView,
+                        @NonNull ViewGroup parent){
+        Filmes filme = getItem(position);
+        View raiz = null;
+        ViewHolder viewHolder = null;
+        Context context = getContext();
+        if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.list_item, parent, false);
-            tituloDoItemTextView = convertView.findViewById(R.id.tituloDoItemTextView);
-            descricaoDoItemTextView = convertView.findViewById(R.id.descricaoDoItemTextView);
-            vh = new ViewHolder();
-            vh.tituloDoItemTextView = tituloDoItemTextView;
-            vh.descricaoDoItemTextView = descricaoDoItemTextView;
-            convertView.setTag(vh);
+            raiz = inflater.inflate(R.layout.list_item,parent,false);
+            viewHolder = new ViewHolder();
+            raiz.setTag(viewHolder);
+            viewHolder.filmeImage = raiz.findViewById(R.id.imageViewFilme);
+            viewHolder.titulo = raiz.findViewById(R.id.tituloFilme);
+            viewHolder.diretor = raiz.findViewById(R.id.diretorFilme);
+            viewHolder.dataLancamento = raiz.findViewById(R.id.dataLancamentoFilme);
+        } else {
+            raiz = convertView;
+            viewHolder = (ViewHolder) raiz.getTag();
         }
-        vh = (ViewHolder) convertView.getTag();
-        vh.tituloDoItemTextView.setText(deInteresse.getTitulo());
-        vh.descricaoDoItemTextView.setText(deInteresse.getDescricao());
-        return convertView;
-    }
 
-    private class ViewHolder {
-        TextView tituloDoItemTextView;
-        TextView descricaoDoItemTextView;
+        viewHolder.titulo.setText(filme.getTitulo() + " - ID " + filme.getId());
+        viewHolder.diretor.setText(filme.getDiretor());
+        viewHolder.dataLancamento.setText(filme.getDataLancamento());
+        return  raiz;
     }
 }
