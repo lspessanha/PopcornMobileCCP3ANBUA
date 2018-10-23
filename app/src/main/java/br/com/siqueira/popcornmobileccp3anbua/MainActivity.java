@@ -21,14 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void listarFilmes(View view ){
         Intent intent = new Intent(this,ListaFilmesActivity.class);
-        intent.putExtra(CHAVE_GENERO,genero);
+        intent.putExtra(CHAVE_GENERO, genero);
         startActivity(intent);
     }
 
     private class FilmeSelecionado implements AdapterView.OnItemSelectedListener{
 
         @Override
-        public void onItemSelected(AdapterView<?> parent,View view,int position,long id){
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
             genero = (String) parent.getItemAtPosition(position);
         }
         public void onNothingSelected(AdapterView<?> parent){

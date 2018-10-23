@@ -37,7 +37,7 @@ public class ListaFilmesActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id){
                 Intent intent = new Intent(atividade, DadosFilmeActivity.class);
-                intent.putExtra(FILME,filmesList.get(position));
+                intent.putExtra(FILME, filmesList.get(position));
                 startActivity(intent);
             }
         });

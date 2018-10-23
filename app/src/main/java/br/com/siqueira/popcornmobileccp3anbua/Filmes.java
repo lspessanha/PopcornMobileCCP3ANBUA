@@ -31,12 +31,18 @@ public class Filmes implements Serializable, Comparable {
         this.generos = generos;
     }
 
-    public String getGenero() { return genero; }
-    public void setGenero(String genero) {this.genero = genero; }
+    public String getGenero() { 
+        return genero;
+    }
+    
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
 
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -44,6 +50,7 @@ public class Filmes implements Serializable, Comparable {
     public String getTitulo() {
         return titulo;
     }
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -51,6 +58,7 @@ public class Filmes implements Serializable, Comparable {
     public String getDescricao() {
         return descricao;
     }
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
@@ -58,14 +66,15 @@ public class Filmes implements Serializable, Comparable {
     public double getPopularidade() {
         return popularidade;
     }
+
     public void setPopularidade(double popularidade) {
         this.popularidade = popularidade;
     }
 
-
     public String getPosterPath() {
         return posterPath;
     }
+
     public void setPosterPath(String posterPath) {
         this.posterPath = posterPath;
     }
@@ -73,6 +82,7 @@ public class Filmes implements Serializable, Comparable {
     public String getDiretor() {
         return diretor;
     }
+
     public void setDiretor(String diretor) {
         this.diretor = diretor;
     }
@@ -85,23 +95,12 @@ public class Filmes implements Serializable, Comparable {
         this.dataLancamento = dataLancamento;
     }
 
+    public Generos getGeneros() {
+        return generos;
+    }
 
-    public Generos getGeneros() {return generos; }
-
-    public void setGeneros(Generos generos) {this.generos = generos; }
-
-    @Override
-    public String toString() {
-        return "Filme{" +
-                "id=" + id +
-                ", titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", popularidade=" + popularidade +
-                ", dataLancamento='" + dataLancamento + '\'' +
-                ", posterPath='" + posterPath + '\'' +
-                ", diretor='" + diretor + '\'' +
-                ", genero='" + genero + '\'' +
-                '}';
+    public void setGeneros(Generos generos) {
+        this.generos = generos;
     }
 
     @Override
@@ -109,9 +108,7 @@ public class Filmes implements Serializable, Comparable {
         if (o == null || o.getClass() != getClass()) {
             return 0;
         } else {
-
             Filmes filme = (Filmes) o;
-
             Collator c = Collator.getInstance();
 
             c.setStrength(Collator.PRIMARY);

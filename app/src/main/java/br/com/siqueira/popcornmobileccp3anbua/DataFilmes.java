@@ -7,7 +7,7 @@ public class DataFilmes {
 
     public static ArrayList<String> listarNomes(ArrayList<Filmes> filmes){
         ArrayList<String> nomes = new ArrayList<>();
-        for(Filmes filme: filmes ){
+        for(Filmes filme: filmes){
             nomes.add(filme.getTitulo());
         }
         return nomes;
@@ -25,7 +25,7 @@ public class DataFilmes {
 
         Arrays.sort(lista);
         filmes = new ArrayList<>();
-        for(int i = 0;i<lista.length;i++){
+        for(int i = 0; i < lista.length; i++){
             filmes.add(lista[i]);
         }
         return  filmes;
