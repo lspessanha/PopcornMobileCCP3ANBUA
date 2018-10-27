@@ -6,7 +6,7 @@ import java.util.List;
 public class Generos implements Serializable {
 
     private int id;
-    private String nome;
+    private String name;
     private List<Filmes> filmes;
 
     public int getId() {
@@ -15,14 +15,6 @@ public class Generos implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public List<Filmes> getFilmes() {
@@ -35,6 +27,20 @@ public class Generos implements Serializable {
 
     public Generos(int id, String nome) {
         this.id = id;
-        this.nome = nome;
+        this.name = nome;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String nome) {
+        this.name = nome;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
 }

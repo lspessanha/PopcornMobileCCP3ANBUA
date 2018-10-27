@@ -4,6 +4,8 @@ import android.support.annotation.NonNull;
 
 import java.io.Serializable;
 import java.text.Collator;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Filmes implements Serializable, Comparable {
 
@@ -11,15 +13,14 @@ public class Filmes implements Serializable, Comparable {
     private String titulo;
     private String descricao;
     private double popularidade;
-    private String dataLancamento;
+    private Date dataLancamento;
     private String posterPath;
     private String diretor;
-    private String genero;
     private Generos generos;
 
 
     public Filmes (){}
-    public Filmes(int id, String titulo, String descricao, double popularidade, String dataLancamento, String posterPath, String diretor, String genero, Generos generos) {
+    public Filmes(int id, String titulo, String descricao, double popularidade, Date dataLancamento, String posterPath, String diretor, Generos generos) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -27,16 +28,7 @@ public class Filmes implements Serializable, Comparable {
         this.dataLancamento = dataLancamento;
         this.posterPath = posterPath;
         this.diretor = diretor;
-        this.genero = genero;
         this.generos = generos;
-    }
-
-    public String getGenero() { 
-        return genero;
-    }
-    
-    public void setGenero(String genero) {
-        this.genero = genero;
     }
 
     public int getId() {
@@ -87,11 +79,11 @@ public class Filmes implements Serializable, Comparable {
         this.diretor = diretor;
     }
 
-    public String getDataLancamento() {
+    public Date getDataLancamento() {
         return dataLancamento;
     }
 
-    public void setDataLancamento(String dataLancamento) {
+    public void setDataLancamento(Date dataLancamento) {
         this.dataLancamento = dataLancamento;
     }
 
@@ -114,5 +106,16 @@ public class Filmes implements Serializable, Comparable {
             c.setStrength(Collator.PRIMARY);
             return c.compare(this.titulo, filme.getTitulo());
         }
+    }
+
+    public String getDateFormat(){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        return dateFormat.format(dataLancamento);
+    }
+
+    @Override
+    public String toString() {
+        return "Filme: " + this.titulo + " Descrição: " +
+                this.descricao + " Diretor: " + this.diretor;
     }
 }

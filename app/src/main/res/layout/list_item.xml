@@ -9,11 +9,10 @@
 
     <ImageView
         android:scaleType="fitCenter"
-        android:id="@+id/imageViewFilme"
+        android:id="@+id/poster"
         android:layout_width="50dp"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/ic_live_tv_black_24dp"
-        />
+        app:srcCompat="@android:color/background_dark" />
 
     <GridLayout
         android:useDefaultMargins="true"
@@ -24,32 +23,35 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/tituloFilme"
             android:layout_column="0"
             android:layout_row="0"
             android:layout_columnSpan="3"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:id="@+id/tituloFilme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#000000" />
 
         <TextView
+            android:id="@+id/diretorFilme"
             android:layout_columnWeight="1"
             android:layout_column="0"
             android:layout_row="1"
-            android:id="@+id/diretorFilme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#000000" />
 
         <TextView
+            android:id="@+id/dataLancamentoFilme"
             android:layout_columnWeight="1"
             android:layout_column="2"
             android:layout_row="1"
-            android:id="@+id/dataLancamentoFilme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textColor="#000000" />
     </GridLayout>
 
 </LinearLayout>

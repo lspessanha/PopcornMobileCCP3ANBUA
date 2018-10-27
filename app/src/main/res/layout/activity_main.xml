@@ -7,25 +7,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <TextView
         android:layout_marginLeft="5dp"
         android:text="Gêneros:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
     <Spinner
         android:id="@+id/generos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:entries="@array/generos"
-        >
-    </Spinner>
+        />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Buscar"
-        android:onClick="listarFilmes"/>
+        android:onClick="listarFilmes" />
 
 </LinearLayout>

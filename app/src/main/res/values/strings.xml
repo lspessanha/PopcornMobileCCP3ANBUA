@@ -1,26 +1,8 @@
 <resources>
     <string name="app_name">PopcornMobileCCP3ANBUA</string>
     <string name="action_settings">Opções</string>
-    <string-array name="generos">
-        <item>Todos</item>
-        <item>Ação</item>
-        <item>Animação</item>
-        <item>Aventura</item>
-        <item>Comédia</item>
-        <item>Crime</item>
-        <item>Documentário</item>
-        <item>Drama</item>
-        <item>Família</item>
-        <item>Fantasia</item>
-        <item>Ficção Científica</item>
-        <item>Filme para TV</item>
-        <item>Guerra</item>
-        <item>História</item>
-        <item>Horror</item>
-        <item>Mistério</item>
-        <item>Musical</item>
-        <item>Romance</item>
-        <item>Suspense</item>
-        <item>Western</item>
-    </string-array>
+    <string name="uri_listFilmes">https://api.themoviedb.org/3/discover/movie?api_key=83cd8cc234ea9b5b4d36b73c38f8fb22&amp;language=pt-BR&amp;with_genres=</string>
+    <string name="uri_genres">https://api.themoviedb.org/3/genre/movie/list?api_key=83cd8cc234ea9b5b4d36b73c38f8fb22&amp;language=pt-BR</string>
+    <string name="uri_image">https://image.tmdb.org/t/p/w300/</string>
+    <string name="uri_director">https://api.themoviedb.org/3/movie/%s/credits?api_key=83cd8cc234ea9b5b4d36b73c38f8fb22</string>
 </resources>
